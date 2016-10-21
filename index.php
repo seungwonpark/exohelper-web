@@ -26,12 +26,15 @@
 				Select your local timezone. <br>
 				<?php require_once('timezone.php'); ?>
 				<br> <br>
+				Select your target exoplanet. (DB from <a href="http://exoplanets.org/">exoplanets.org</a>) <br>
+				<?php require_once('exoplanets.php'); ?>
+				<br> <br>
 				<input type="submit" value="Get graph.">
 			</form>			
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-5">
 			<h2> Auxillary tools </h2>			
-			<button onclick="getLocation()">Get your coordinates</button>
+			<button onclick="getLocation()">Get your coordinates and map.</button>
 			<!-- GSHS coordinates - Latitude: 37.3 / Longitude: 127.0 -->
 			<p id="show_geolocation"></p>
 			<p id="mapholder"></p>
