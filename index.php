@@ -13,15 +13,15 @@
 		<div class="col-sm-5">
 			<h2> Type info. </h2>
 			<!-- date information -->
-			<form action="plot.php" method="post">
-				Type a date of your observation plan. <br>
-				<input type="text" class="input_date" name="input_year" placeholder="year" size="10">
-				<input type="text" class="input_date" name="input_month" placeholder="month" size="10">
-				<input type="text" class="input_date" name="input_day" placeholder="day" size="10">
+			<form name="type_form" action="plot.php" onsubmit="return validateForm()" method="post">
+				Type a date of your observation plan. (MM/DD/YYYY) <br>
+				<input type="text" class="input_date" name="input_month" placeholder="MM" size="2">
+				<input type="text" class="input_date" name="input_day" placeholder="DD" size="2">
+				<input type="text" class="input_date" name="input_year" placeholder="YYYY" size="5">
 				<br> <br>
-				Type your observatory's coordinates. <br>
-				<input type="text" class="input_coor" name="input_latitude" placeholder="latitude" size="10">
-				<input type="text" class="input_coor" name="input_longitude" placeholder="longitude" size="10">
+				Type your observatory's coordinates. (latitude, longitude) <br>
+				<input type="text" class="input_coor" name="input_latitude" placeholder="latitude" size="5">
+				<input type="text" class="input_coor" name="input_longitude" placeholder="longitude" size="5">
 				<br> <br>
 				Select your local timezone. <br>
 				<?php require_once('timezone.php'); ?>
@@ -30,7 +30,7 @@
 				<?php require_once('exoplanets.php'); ?>
 				<br> <br>
 				<input type="submit" value="Get graph.">
-			</form>			
+			</form>
 		</div>
 		<div class="col-sm-5">
 			<h2> Auxillary tools </h2>			
@@ -44,6 +44,28 @@
 			<p id="show_time"></p>
 		</div>
 	</div>
+	
+	<script>
+	function isValidDate(y, m, d){
+		var daysInMonth = [0,31,28,31,30,31,30,31,31,30,31,30,31];
+		if ( (!(y % 4) && y % 100) || !(y % 400)) {
+			daysInMonth[2] = 29;
+		}
+		if(d>=1 && d<=daysInMonth[m]){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	function validateForm(){
+		var y = document.forms["type_form"]["input_year"].value;
+		var m = document.forms["type_form"]["input_month"].value;
+		var d = document.forms["type_form"]["input_date"].value;
+		alert(y + m + d);
+		return false;
+	}
+	</script>
 	
 	<script>
 	var x = document.getElementById("show_geolocation");
