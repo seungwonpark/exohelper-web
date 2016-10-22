@@ -14,12 +14,12 @@
 			<h2> Type info. </h2>
 			<!-- date information -->
 			<form action="plot.php" method="post">
-				Type date. <br>
+				Type a date of your observation plan. <br>
 				<input type="text" class="input_date" name="input_year" placeholder="year" size="10">
 				<input type="text" class="input_date" name="input_month" placeholder="month" size="10">
 				<input type="text" class="input_date" name="input_day" placeholder="day" size="10">
 				<br> <br>
-				Type your coordinates. <br>
+				Type your observatory's coordinates. <br>
 				<input type="text" class="input_coor" name="input_latitude" placeholder="latitude" size="10">
 				<input type="text" class="input_coor" name="input_longitude" placeholder="longitude" size="10">
 				<br> <br>
@@ -65,7 +65,7 @@
 	function show_geo_Error(error) {
 		switch(error.code) {
 			case error.PERMISSION_DENIED:
-				x.innerHTML = "User denied the request for Geolocation."
+				x.innerHTML = "User denied the request for Geolocation. <br> If you're Google Chrome user, this happens because as of Chrome 50, this utility can only be used on HTTPS."
 				break;
 			case error.POSITION_UNAVAILABLE:
 				x.innerHTML = "Location information is unavailable."
