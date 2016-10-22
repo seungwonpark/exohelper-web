@@ -1,17 +1,17 @@
-<script>
-	d3.csv("database/exoplanet_list-selected-numbered.csv", function(error,data){
-		var select = d3.select("body")
-			.append("div")
-			.append("select")
-		select
-			.on("change", function(d){
-				var value = d3.select(this).property("value");
-			});
-		select.selectAll("option")
-			.data(data)
-			.enter()
-				.append("option")
-				.attr("value", function (d) {return d.value;})
-				.text(function (d) {return d.label;});
-	});
-</script>
+<?php
+	echo '<select>';
+	$file_DB = fopen('database/exoplanet_list-selected-numbered.csv', 'r');
+	$row = fgetcsv($file_DB); // initialize exoplanet selection
+	while(!feof($file_DB)){
+		$row = fgetcsv($file_DB);
+		$exoplanet_num = $row[0];
+		$exoplanet_name = $row[1];
+		echo '<option value="';
+		echo $exoplanet_num;
+		echo '">';
+		echo $exoplanet_name;
+		echo '</option>';
+		echo "\r\n";
+	}
+	echo '</select>';
+?>
