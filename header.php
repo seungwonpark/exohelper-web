@@ -21,4 +21,4 @@
 <script src="js/plotly-latest.min.js"></script>
 
 <!-- d3js javascript -->
-<script src="js/d3.min.js"></script>
+<!-- <script src="js/d3.min.js"></script> -->
