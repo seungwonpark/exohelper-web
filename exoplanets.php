@@ -1,5 +1,5 @@
 <?php
-	echo '<select>';
+	echo '<select name="select_exoplanet">';
 	$file_DB = fopen('database/exoplanet_list-selected-numbered.csv', 'r');
 	$row = fgetcsv($file_DB); // initialize exoplanet selection
 	while(!feof($file_DB)){
