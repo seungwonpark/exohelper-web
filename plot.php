@@ -12,6 +12,7 @@
 	<a href="index.php"> Go back </a>
 	
 	<?php include_once('transfer_data.php'); ?>
+	<?php include_once('calculation.php'); ?>
 	
 	<div align="center">
 		<div id="myDiv" style="width:600px;height:350px;"></div>
@@ -21,7 +22,7 @@
 	<br>
 	
 	<?php
-		$plot_title = "'Exoplanet observation guide in " . $month . "." . $day . "." .$year . " at GMT " . $timezone_char . " of " . $twoDarray[$star_no][1] . "'";
+		$plot_title = "'Exoplanet observation guide in " . $month . "." . $day . "." .$year . " at GMT " . $timezone_char . " of " . $exo_name . "'";
 		$plot_xaxis_title = "'Time'";
 		$plot_yaxis_title = "'Altitude'";
 	?>

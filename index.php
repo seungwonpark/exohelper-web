@@ -57,12 +57,18 @@
 			return false;
 		}
 	}
+	function isValidCoordinates(phi, lam){
+		if(phi > 90) return false;
+		else return true;
+	}
 	function validateForm(){
 		var m = document.forms["type_form"]["input_month"].value;
 		var d = document.forms["type_form"]["input_day"].value;
 		var y = document.forms["type_form"]["input_year"].value;
-		if(isValidDate(m,d,y) == false){
-			alert("Invalid date. Please check it again.");
+		var phi = document.forms["type_form"]["input_latitude"].value;
+		var lam = document.forms["type_form"]["input_longitude"].value;
+		if( !(isValidDate(m, d, y) & isValidCoordinates(phi, lam)) ){
+			alert("Invalid date/coordinates. Please check it again.");
 			return false;
 		}
 	}
