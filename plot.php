@@ -6,7 +6,7 @@
 <html>
 <body>
 	<div align="center">
-		<h1>Exohelper Web UI</h1>
+		<h1>Exohelper Web UI(WIP)</h1>
 	</div>
 	
 	<a href="index.php"> Go back </a>

@@ -1,5 +1,5 @@
 <div align="center">
-(c) Copyright exohelper by <a target="_blank" href="https://github.com/phdlim">phdlim</a>, <a target="_blank" href="https://github.com/seungwonpark">seungwonpark</a> under MIT License.
+(c) Copyright exohelper by <a target="_blank" href="https://github.com/phdlim">Dohoon Lim</a>, <a target="_blank" href="https://github.com/seungwonpark">Seungwon Park</a> under MIT License.
 <br>
 This research has made use of the Exoplanet Orbit Database and the Exoplanet Data Explorer at <a href="http://exoplanets.org/">exoplanets.org</a>.
 </div>
