@@ -8,7 +8,6 @@
 	<div align="center">
 		<h1>Exohelper Web UI</h1>
 	</div>
-	
 	<div class="row center-block">
 		<div class="col-sm-5">
 			<h2> Type info. </h2>
@@ -46,7 +45,7 @@
 	</div>
 	
 	<script>
-	function isValidDate(y, m, d){
+	function isValidDate(m, d, y){
 		var daysInMonth = [0,31,28,31,30,31,30,31,31,30,31,30,31];
 		if ( (!(y % 4) && y % 100) || !(y % 400)) {
 			daysInMonth[2] = 29;
@@ -59,11 +58,13 @@
 		}
 	}
 	function validateForm(){
-		var y = document.forms["type_form"]["input_year"].value;
 		var m = document.forms["type_form"]["input_month"].value;
-		var d = document.forms["type_form"]["input_date"].value;
-		alert(y + m + d);
-		return false;
+		var d = document.forms["type_form"]["input_day"].value;
+		var y = document.forms["type_form"]["input_year"].value;
+		if(isValidDate(m,d,y) == false){
+			alert("Invalid date. Please check it again.");
+			return false;
+		}
 	}
 	</script>
 	
