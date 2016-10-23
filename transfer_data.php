@@ -3,8 +3,8 @@
 	$year = $_POST["input_year"];
 	$month = $_POST["input_month"];
 	$day = $_POST["input_day"];
-	$latitude = $_POST["input_latitude"];
-	$longitude = $_POST["input_longitude"];
+	$phi = $_POST["input_latitude"];
+	$lam = $_POST["input_longitude"];
 	$timezone = $_POST["select_timezone"];
 	$star_no = $_POST["select_exoplanet"];
 	if($timezone > 0){
