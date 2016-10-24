@@ -37,13 +37,14 @@
 		$zequat = sin($lon) * sin($oblecl);
 		$sun_ra = atan2($yequat, $xequat) * 180 / M_PI / 15;
 		$sun_dec = rad2deg(atan2($zequat, sqrt($xequat * $xequat + $yequat * $yequat)));
-		$EOT_min = -7.659 * sin($M) + 9.863 * sin(2 * $M + 3.5932);
+		$EOT_min = -7.659 * sin($M) + 9.863 * sin(2 * $M + 3.5932); // 균시차
 	}
 	function calculate_transit(){ // no returning value.
 		$transit_start = $exo_tt - ($exo_t14 / 2.0) / 86400;
 		$transit_end = $exo_tt + ($exo_t14 / 2.0) / 86400;
 	}
 	function calculate_SunSouthing(){
+		// Refer to http://astro.kasi.re.kr/Community/FAQViewForm.aspx?MenuID=1594&FAQID=9
 		$JD_cen = ($JD - 2451545.0) / 36525;
 		$LST = $sun_ra;
 		$GST = $LST + $lam / 15.0;

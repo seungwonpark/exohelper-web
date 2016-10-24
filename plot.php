@@ -13,6 +13,7 @@
 	
 	<?php include_once('transfer_data.php'); ?>
 	<?php include_once('calculation.php'); ?>
+	<?php echo 'Sun Southing : ' . $sun_southing; ?>
 	
 	<div align="center">
 		<div id="myDiv" style="width:600px;height:350px;"></div>
